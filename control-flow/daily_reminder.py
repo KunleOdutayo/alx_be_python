@@ -19,4 +19,4 @@ elif time_bound == 'no':
 else:
     print("Please enter yes or no")
 
-print(reminder)
+print(f"{reminder}")
