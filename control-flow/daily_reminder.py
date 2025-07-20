@@ -1,5 +1,5 @@
 task = input("Enter your task: ")
-priority = input("Priority (high, low, medium): ")
+priority = input("Priority (high/low/medium): ")
 time_bound = input("Is it time-bound? (yes/no): ")
 reminder = ""
 match priority:
