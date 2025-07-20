@@ -1,4 +1,4 @@
-size = int(input("Enter the sie of the pattern: "))
+size = int(input("Enter the size of the pattern: "))
 if size <= 0:
     print("Error: Enter positive integer")
 
