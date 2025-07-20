@@ -13,8 +13,8 @@ match priority:
         print("Please input valid priority level.")
         print(reminder, end="")
 if time_bound == 'yes':
-    reminder += "It requires immediate attention."
-elif time_bound == no:
+    reminder += " It requires immediate attention."
+elif time_bound == 'no':
     reminder += "Complete it in your free time."
 else:
     print("Please enter yes or no")
