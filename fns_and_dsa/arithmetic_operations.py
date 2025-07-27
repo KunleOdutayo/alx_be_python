@@ -1,4 +1,4 @@
-def perform_operation(num1: float, num2: float, operation: str):
+def perform_operation(num1, num2, operation):
     num1 = float(input("Enter first number: "))
     num2 = float(input("Enter second Number: "))
     operation = input ("Enter type of operation (add, subtract, multiply, divide): ")
@@ -16,5 +16,5 @@ def perform_operation(num1: float, num2: float, operation: str):
     else:
         return "Error: Invalid operation"
     
-        result = perform_operation (num1, num2, operation)
+    result = perform_operation (num1, num2, operation)
     print(f"Result: {result}")
