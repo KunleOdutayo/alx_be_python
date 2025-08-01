@@ -1,30 +1,38 @@
-def display_menu():
-    print("Shopping List Manager")
-    print("1. Add Item")
-    print("2. Remove Item")
-    print("3. View List")
-    print("4. Exit")
+from datetime import datetime, timedelta
+
+def display_current_datetime():
+    """
+    Displays the current date and time in 'YYYY-MM-DD HH:MM:SS' format.
+    """
+    current_date = datetime.now()
+    print(f"Current Date and Time: {current_date.strftime('%Y-%m-%d %H:%M:%S')}")
+
+def calculate_future_date():
+    """
+    Prompts the user for a number of days, calculates a future date based on
+    the current date, and prints it in 'YYYY-MM-DD' format.
+    """
+    try:
+        days_to_add = int(input("Enter the number of days to add: "))
+        if days_to_add < 0:
+            print("Please enter a non-negative number of days.")
+            return
+
+        current_date = datetime.now()
+        future_date = current_date + timedelta(days=days_to_add)
+        print(f"Future Date ({days_to_add} days from now): {future_date.strftime('%Y-%m-%d')}")
+    except ValueError:
+        print("Invalid input. Please enter an integer for the number of days.")
 
 def main():
-    shopping_list = []
-    while True:
-        display_menu()
-        choice = input("Enter your choice: ")
-
-        if choice == '1':
-            # Prompt for and add an item
-            pass
-        elif choice == '2':
-            # Prompt for and remove an item
-            pass
-        elif choice == '3':
-            # Display the shopping list
-            pass
-        elif choice == '4':
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+    """
+    Main function to run the datetime operations.
+    """
+    print("--- Date and Time Explorer ---")
+    display_current_datetime()
+    print("\n--- Calculating Future Date ---")
+    calculate_future_date()
+    print("\nExploration complete, Kay!")
 
 if __name__ == "__main__":
     main()
