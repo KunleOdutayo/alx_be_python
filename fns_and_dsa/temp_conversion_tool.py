@@ -2,7 +2,7 @@
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
-def convert_to_clesius(fahrenheit):
+def convert_to_celsius(fahrenheit):
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
@@ -20,6 +20,7 @@ def main():
         print("{temp_input}°C is equal to {converted_temp}°F")
     else:
         print("Invalid unit. Please enter 'C' or 'F'" )
+
 
 if __name__ == "__main__":
     main()
