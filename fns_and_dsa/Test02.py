@@ -1,38 +1,45 @@
-from datetime import datetime, timedelta
+# temp_conversion_tool.py
 
-def display_current_datetime():
-    """
-    Displays the current date and time in 'YYYY-MM-DD HH:MM:SS' format.
-    """
-    current_date = datetime.now()
-    print(f"Current Date and Time: {current_date.strftime('%Y-%m-%d %H:%M:%S')}")
+# Define global variables for conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
-def calculate_future_date():
+def convert_to_celsius(fahrenheit):
     """
-    Prompts the user for a number of days, calculates a future date based on
-    the current date, and prints it in 'YYYY-MM-DD' format.
+    Converts a temperature from Fahrenheit to Celsius using a global factor.
     """
-    try:
-        days_to_add = int(input("Enter the number of days to add: "))
-        if days_to_add < 0:
-            print("Please enter a non-negative number of days.")
-            return
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
-        current_date = datetime.now()
-        future_date = current_date + timedelta(days=days_to_add)
-        print(f"Future Date ({days_to_add} days from now): {future_date.strftime('%Y-%m-%d')}")
-    except ValueError:
-        print("Invalid input. Please enter an integer for the number of days.")
+def convert_to_fahrenheit(celsius):
+    """
+    Converts a temperature from Celsius to Fahrenheit using a global factor.
+    """
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     """
-    Main function to run the datetime operations.
+    Main function to handle user interaction and temperature conversion.
     """
-    print("--- Date and Time Explorer ---")
-    display_current_datetime()
-    print("\n--- Calculating Future Date ---")
-    calculate_future_date()
-    print("\nExploration complete, Kay!")
+    try:
+        # Prompt the user for temperature and unit
+        temp_input = input("Enter the temperature value: ")
+        temp_value = float(temp_input)
+        
+        unit_input = input("Enter the unit ('C' for Celsius, 'F' for Fahrenheit): ").strip().upper()
+
+        # Perform conversion based on the unit
+        if unit_input == 'F':
+            converted_temp = convert_to_celsius(temp_value)
+            print(f"{temp_value}°F is equal to {converted_temp:.2f}°C")
+        elif unit_input == 'C':
+            converted_temp = convert_to_fahrenheit(temp_value)
+            print(f"{temp_value}°C is equal to {converted_temp:.2f}°F")
+        else:
+            print("Invalid unit. Please enter 'C' or 'F'.")
+
+    except ValueError:
+        # Handle non-numeric input
+        print("Invalid temperature. Please enter a numeric value.")
 
 if __name__ == "__main__":
     main()
