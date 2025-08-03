@@ -1,7 +1,8 @@
 class BankAccount:
-    def __init__(self,initial_balance):
+    
+    def __init__(self,initial_balance=0):
         if initial_balance >= 0:
-            self._initial_balance = initial_balance
+            self._account_balance = initial_balance
         else:
             print('Initial balance cannot be negative. Settinig to 0.')
             self._account_balance = 0
