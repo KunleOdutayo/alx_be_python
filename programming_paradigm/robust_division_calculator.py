@@ -4,7 +4,7 @@ def safe_divide(numerator, denominator):
         nom2 = float(denominator)
 
         if nom2 == 0:
-            return "Cannont divide by zero."
+            return "Error: Cannont divide by zero."
         
         return nom1 / nom2
     except ValueError:
