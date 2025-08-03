@@ -43,5 +43,9 @@ class TestSimpleCalculator(unittest.TestCase):
          # for a positive and a negative number
         self.assertEqual(self.calc.add(10, -5), -50)
 
+    def test_division(self):
+        # for two postive numbers
+        self.assertEqual(self.calc.divide(10, 5), 2)
+
 if __name__ == '__main__':
     inittest.main()
