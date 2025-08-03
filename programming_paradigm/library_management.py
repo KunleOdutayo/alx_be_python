@@ -25,7 +25,7 @@ class Library:
         print("Added '{book.title}' by {book.author} to the library.")
 
     def check_out_book(self, title):
-        for book in shelf._books:
+        for book in self._books:
             if book.title == title:
                 if not book._is_checked_out:
                     book._is_checked_out = True
