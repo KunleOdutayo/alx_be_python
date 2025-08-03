@@ -8,4 +8,4 @@ def safe_divide(numerator, denominator):
         
         return nom1 / nom2
     except ValueError:
-        return ["Error: Non-numeric input. Arguements must be numbers."]
+        return ["Error: Please enter numeric values only."]
