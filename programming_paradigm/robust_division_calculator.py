@@ -3,9 +3,10 @@ def safe_divide(numerator, denominator):
         nom1 = float(numerator)
         nom2 = float(denominator)
 
-        if nom2 == 0:
-            return ["Error: Cannot divide by zero."]
-        
-        return nom1 / nom2
+        result = nom1 / nom2
+        return f"Result: {result}"
     except ValueError:
-        return ["Error: Please enter numeric values only."]
+        return "Error: Must enter numeric value."
+    
+    except ZeroDivisionError:
+        return "Error: Cannot be divided by zero."
