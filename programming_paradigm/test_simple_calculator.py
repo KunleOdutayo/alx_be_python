@@ -23,22 +23,22 @@ class TestSimpleCalculator(unittest.TestCase):
 
     def test_subtraction(self):
         # for two postive numbers
-        self.assertEqual(self.calc.add(5, 3), 2)
-        self.assertEqual(self.calc.add(100, 200), -100)
+        self.assertEqual(self.calc.subtract(5, 3), 2)
+        self.assertEqual(self.calc.subtract(100, 200), -100)
 
         # for a positive and a negative number
-        self.assertEqual(self.calc.add(10, -5), 15)
+        self.assertEqual(self.calc.subtract(10, -5), 15)
 
         # for two negative numbers
-        self.assertEqual(self.calc.add(-3, -2), 1)
+        self.assertEqual(self.calc.subtract(-3, -2), 1)
 
          # with zero
-        self.assertEqual(self.calc.add(90, 0), 90)
-        self.assertEqual(self.calc.add(0, 90), -90)
+        self.assertEqual(self.calc.subtract(90, 0), 90)
+        self.assertEqual(self.calc.subtract(0, 90), -90)
 
     def test_multiplication(self):
         # for two postive numbers
-        self.assertEqual(self.calc.add(5, 3), 15)
+        self.assertEqual(self.calc.multiply(5, 3), 15)
 
          # for a positive and a negative number
         self.assertEqual(self.calc.add(10, -5), -50)
