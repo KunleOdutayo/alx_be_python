@@ -20,6 +20,9 @@ class EBook(Book):
         clean_base_details = base_details.replace("Book: ", "")
         return f"EBook: {clean_base_details}, File Size: {self.file_size}KB"
     
+    def __str__(self) -> str:
+        return self.get_details()
+    
 class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
         super().__init__(title, author)
