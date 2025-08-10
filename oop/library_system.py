@@ -47,4 +47,4 @@ class Library:
             return
     
         for book in self.books:
-            print(book.get_details())
+            print(book)
