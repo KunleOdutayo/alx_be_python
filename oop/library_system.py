@@ -11,7 +11,7 @@ class Book:
 
 
 class EBook(Book):
-    def __init__(self, title: str, author: str, filesize: int):
+    def __init__(self, title: str, author: str, file_size: int):
         super().__init__(title, author)
         self.file_size = file_size
 
