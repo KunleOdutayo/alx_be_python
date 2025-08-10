@@ -5,6 +5,9 @@ class Book:
 
     def get_details(self) -> str:
         return f"Book: {self.title} by {self.author}"
+    
+    def __str__(self) -> str:
+        return self.get_details()
 
 
 class EBook(Book):
