@@ -41,7 +41,7 @@ class Library:
         else:
             print(f"Cannot add non-Book object: {type(book)}")
 
-    def list_book(self):
+    def list_books(self):
         if not self.book:
             print("Library does not have books")
             return
